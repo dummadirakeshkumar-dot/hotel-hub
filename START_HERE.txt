@@ -1,0 +1,15 @@
+HOSTELHUB V2 - START HERE
+
+1. Open this extracted HostelHub_V2 folder in VS Code.
+2. Open Terminal > New Terminal.
+3. Run: npm install
+4. Run: npm run seed
+5. Run: npm start
+6. Open http://localhost:3000
+7. In a second terminal, run: npm test
+8. Read README.md and docs/SCREENSHOT_GUIDE.md.
+
+Important:
+- Do not create data/hostelhub.db manually. It is generated automatically.
+- Do not upload node_modules or the live database to GitHub.
+- The three twist tests use separate test databases.

@@ -1,0 +1,86 @@
+@baseUrl = http://localhost:3000
+
+### Health check
+GET {{baseUrl}}/
+
+### Create resident
+POST {{baseUrl}}/residents
+Content-Type: application/json
+
+{
+  "name": "Ravi Kumar",
+  "email": "ravi@example.com",
+  "phone": "9876543210"
+}
+
+### List residents
+GET {{baseUrl}}/residents
+
+### Get one resident (replace 1 if needed)
+GET {{baseUrl}}/residents/1
+
+### Update resident
+PUT {{baseUrl}}/residents/1
+Content-Type: application/json
+
+{
+  "name": "Ravi K",
+  "email": "ravi@example.com",
+  "phone": "9876543210"
+}
+
+### Create room
+POST {{baseUrl}}/rooms
+Content-Type: application/json
+
+{
+  "name": "301",
+  "block": "C",
+  "status": "available"
+}
+
+### Get all rooms
+GET {{baseUrl}}/rooms
+
+### Search rooms by block
+GET {{baseUrl}}/rooms?block=A
+
+### Filter available rooms
+GET {{baseUrl}}/rooms?status=available
+
+### Get one room
+GET {{baseUrl}}/rooms/1
+
+### Update room
+PUT {{baseUrl}}/rooms/1
+Content-Type: application/json
+
+{
+  "name": "101",
+  "block": "A",
+  "status": "maintenance"
+}
+
+### Add allotment (use existing resident_id and room_id)
+POST {{baseUrl}}/allotments
+Content-Type: application/json
+
+{
+  "resident_id": 1,
+  "room_id": 1
+}
+
+### List allotments
+GET {{baseUrl}}/allotments
+
+### Required JOIN endpoint
+GET {{baseUrl}}/allotments/join
+
+### Top Three twist
+GET {{baseUrl}}/rooms/top
+
+### Vacate an allotment (replace 1 if needed)
+PATCH {{baseUrl}}/allotments/1/vacate
+
+### Delete room (only if no allotment history exists)
+DELETE {{baseUrl}}/rooms/6

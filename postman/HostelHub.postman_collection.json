@@ -1,0 +1,333 @@
+{
+  "info": {
+    "name": "HostelHub API",
+    "description": "API collection for HostelHub room allotment project. Start the server at localhost:3000 before running requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": []
+        }
+      }
+    },
+    {
+      "name": "Create resident",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/residents",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "residents"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ravi Kumar\",\n  \"email\": \"ravi@example.com\",\n  \"phone\": \"9876543210\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "List residents",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/residents",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "residents"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get resident 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/residents/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "residents",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create room",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/rooms",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"301\",\n  \"block\": \"C\",\n  \"status\": \"available\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "List rooms",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rooms",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search block A",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rooms?block=A",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms?block=A"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filter available rooms",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rooms?status=available",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms?status=available"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get room 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rooms/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update room 1",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/rooms/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"101\",\n  \"block\": \"A\",\n  \"status\": \"maintenance\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Create allotment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/allotments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "allotments"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"resident_id\": 1,\n  \"room_id\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "List allotments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/allotments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "allotments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Required JOIN",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/allotments/join",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "allotments",
+            "join"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Top Three",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rooms/top",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms",
+            "top"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Vacate allotment 1",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/allotments/1/vacate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "allotments",
+            "1",
+            "vacate"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete room 6",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rooms/6",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rooms",
+            "6"
+          ]
+        }
+      }
+    }
+  ]
+}
